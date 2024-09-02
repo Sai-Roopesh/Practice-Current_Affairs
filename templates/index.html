@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@2.0.2/dist/htmx.js" integrity="sha384-yZq+5izaUBKcRgFbxgkRYwpHhHHCpp5nseXp0MEQ1A4MTWVMnqkmcuFez8x5qfxr" crossorigin="anonymous"></script>
+    <title>Current Affairs Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        button {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #quiz, #result {
+            margin-top: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Current Affairs Quiz</h1>
+    
+    <button hx-get="/current" hx-target="#current" hx-swap="innerHTML">
+        View Current Affairs
+    </button>
+    <div id="current"></div>
+
+    <button hx-get="/quiz" hx-target="#quiz" hx-swap="innerHTML">
+        Take Quiz
+    </button>
+    <div id="quiz"></div>
+</body>
+</html>
